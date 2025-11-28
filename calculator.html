@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    .main-div{
+      width: 350px;
+      height: 600px;
+      border : 2px solid black;
+      background-color: lightgrey;
+      text-align: center;
+      margin: 0 auto;
+
+    }
+    .screen{
+      width: 90%;
+      height: 50px;
+      
+      margin: 20px auto;
+      background-color: white;
+    }
+    .inp{
+      width: 100%;
+      height: 50px;
+      font-size: 24px;
+      text-align: right;
+      border: none;
+      background-color: beige;
+      
+    }
+
+    .button-div{
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+      background-color: lightgray;
+    }
+    .btn{
+      width: 70px;
+      height: 70px;
+      font-size: 24px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1> Calculator </h1>
+  <div class="main-div">
+    <div class="screen">
+      <input class="inp" type="text" id="result">
+    </div>
+    <div class="button-div">
+      <button class="btn">0</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">7</button>
+
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn">+</button>
+      <button class="btn">-</button>
+      <button class="btn">*</button>
+      <button class="btn">/</button>
+      <button class="btn">C</button>
+      <button class="btn">=</button>
+
+    </div>
+  </div>
+
+  <script>
+    let result = document.getElementById("result");
+    let buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach(btn =>{
+      btn.addEventListener("click",()=>{
+        let value = btn.innerText;
+        if(value === 'C'){
+          result.value = "";
+        }
+        else if(value === "="){
+          try{
+            result.value = eval(result.value);
+          }
+          catch{
+            result.value = "Error";
+          }
+        }
+        else{
+          result.value += value;
+        }
+      })
+    })
+
+
+
+  </script>
+</body>
+</html>
