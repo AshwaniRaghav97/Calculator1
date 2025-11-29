@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO DO LIST</title>
+  <style>
+    .main-div{
+      width: 450px;
+      height: 500px;
+      border : 2px solid black;
+      background-color: lightblue;
+      text-align: center;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+    #task{
+      width: 300px;
+      height: 40px;
+      font-size: 20px;
+      margin-top: 20px;
+      padding: 5px;
+      border-radius: 10px;
+      border : none;
+      font-size: larger;
+      
+    }
+    #btn{
+      width: 100px;
+      height: 50px;
+      font-size: 20px;
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+      border : none;
+      background-color: lightgreen;
+    }
+    #list{
+      text-align: left;
+      margin: 20px auto;
+      padding: 0;
+      width: 80%;
+      font-size: 20px;
+    }
+    .del{
+      margin-left: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      border : none;
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-div">
+    <h1> TO-DO LIST </h1>
+    <input type="text" id="task" placeholder="Enter the task">
+    <button id="btn">Add Task</button><br>
+    <ul id ="list">
+      <li>Sample Task 1     <button class="del">Delete</button> </li> 
+      <li>Sample Task 2     <button class="del">Delete</button> </li>
+      <li>Sample Task 3     <button class="del">Delete</button> </li>
+    </ul>
+  </div>
+  <script>
+    let btn = document.getElementById("btn");
+    
+  </script>
+</body>
+</html>
