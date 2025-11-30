@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cricket Game</h1>
+  <h3>0</h3>
+  <button id="startBtn">Start Playing </button>
+  <h2 id="run">You Got Runs Per Boll</h2>
+  <h2 id="max">Max Run</h2>
+
+  <script>
+    let score = 0;
+    let maxScore = -1;
+    max = document.getElementById('max');
+    let run = document.getElementById('run');
+    const scoreDisplay = document.querySelector('h3');
+    const startBtn = document.getElementById('startBtn');
+    startBtn.addEventListener("click",()=>{
+      let num = Math.floor(Math.random()*7);
+      if(num === 0){
+        run.innerHTML = "You are Out!";
+        scoreDisplay.innerHTML = `Total Score: ${score}`;
+        if(maxScore < score){
+          max.innerHTML = `Max Run: ${score}`;
+        }
+        score = 0;
+      } 
+      else {
+        if(num === 1) run.innerHTML = "You Got 1 Run";
+        else if(num === 2) run.innerHTML = "You Got 2 Runs";
+        else if(num === 3) run.innerHTML = "You Got 3 Runs";
+        else if(num === 4) run.innerHTML = "You Got 4 Runs";
+        else if(num === 5) run.innerHTML = "You Got 5 Runs";
+        else if(num === 6) run.innerHTML = "You Got 6 Runs";
+        score += num;
+        scoreDisplay.innerHTML = `Total Score: ${score}`;
+        if(score > maxScore){
+          maxScore = score;
+          max.innerHTML = `Max Run: ${maxScore}`;
+        }
+      }
+    })
+    
+  </script>
+</body>
+</html>

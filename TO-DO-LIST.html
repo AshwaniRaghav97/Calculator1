@@ -58,13 +58,31 @@
     <input type="text" id="task" placeholder="Enter the task">
     <button id="btn">Add Task</button><br>
     <ul id ="list">
-      <li>Sample Task 1     <button class="del">Delete</button> </li> 
-      <li>Sample Task 2     <button class="del">Delete</button> </li>
-      <li>Sample Task 3     <button class="del">Delete</button> </li>
+      
     </ul>
   </div>
   <script>
+    
     let btn = document.getElementById("btn");
+    btn.addEventListener("click",()=>{
+      let task = document.getElementById("task").value;
+      if(task !== ""){
+        task = task.trim();
+        let li = document.createElement("li");
+        li.innerHTML = `${task} <button class="del">Delete</button> `;
+        document.getElementById("list").appendChild(li);
+        document.getElementById("task").value = "";
+      }
+    })
+
+    let del = document.getElementsByClassName("del");
+    for(let i=0; i<del.length; i++){
+      del[i].addEventListener("click",(e)=>{
+        e.target.parentNode.remove();
+      })
+    }
+
+
     
   </script>
 </body>

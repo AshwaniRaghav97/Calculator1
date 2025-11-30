@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    section{
+      display:none;
+    }
+    section.active{
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('about')">About</a></li>
+      <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    </ul>
+
+    <section id="home" class="active">
+      <h1>Home Page</h1>
+    </section>
+
+    <section id="about">
+      <h1>About Page</h1>
+    </section>
+
+
+    <section id="contact">
+      <h1>Contact Page</h1>
+    </section>
+  </div>
+
+
+  <script>
+
+    function showPage(pageId){
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec =>{
+        sec.classList.remove("active");
+      });
+      document.getElementById(pageId).classList.add("active");
+    }
+
+    
+    
+
+    
+
+  </script>
+</body>
+</html>
